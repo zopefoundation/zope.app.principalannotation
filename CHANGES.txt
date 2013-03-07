@@ -2,7 +2,7 @@
 CHANGES
 =======
 
-3.7.1 (unreleased)
+3.7.1 (2013-03-07)
 ------------------
 
 - Use doctest from the standard library, drop ``zope.testing`` from test
