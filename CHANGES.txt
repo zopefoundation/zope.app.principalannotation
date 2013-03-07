@@ -2,6 +2,13 @@
 CHANGES
 =======
 
+3.7.1 (unreleased)
+------------------
+
+- Use doctest from the standard library, drop ``zope.testing`` from test
+  dependencies.
+
+
 3.7.0 (2009-12-26)
 ------------------
 
