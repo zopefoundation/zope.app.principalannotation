@@ -13,6 +13,5 @@
 ##############################################################################
 """Utility for storing `IAnnotations` for principals.
 
-$Id$
 """
 from zope.principalannotation.interfaces import IPrincipalAnnotationUtility # BBB

@@ -12,8 +12,6 @@
 #
 ##############################################################################
 """Bootstrap code for principal annotation utility.
-
-$Id$
 """
 
 import transaction
@@ -29,7 +27,7 @@ def bootStrapSubscriber(event):
     Create utility at that time if not yet present
     """
 
-    db, connection, root, root_folder = getInformationFromEvent(event)
+    _db, connection, _root, root_folder = getInformationFromEvent(event)
 
     ensureUtility(root_folder, IPrincipalAnnotationUtility,
                   'PrincipalAnnotation', PrincipalAnnotationUtility)

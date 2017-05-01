@@ -13,11 +13,10 @@
 ##############################################################################
 """Implementation of `IPrincipalAnnotationUtility`.
 
-$Id$
 """
 
 # BBB: the functionality was moved to zope.principalannotation
 from zope.principalannotation.utility import (
     PrincipalAnnotationUtility,
     Annotations,
-    annotations) 
+    annotations)
