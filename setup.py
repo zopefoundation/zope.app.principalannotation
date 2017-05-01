@@ -34,7 +34,7 @@ tests_require = [
 ]
 
 setup(name='zope.app.principalannotation',
-      version='4.0.0.dev0',
+      version='4.0.0',
       author='Zope Corporation and Contributors',
       author_email='zope-dev@zope.org',
       description='Bootstrap subscriber and browser menu item for zope.principalannotation',
