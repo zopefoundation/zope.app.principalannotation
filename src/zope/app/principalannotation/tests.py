@@ -14,7 +14,6 @@
 """Principal Annotation Tests
 
 """
-import doctest
 import unittest
 
 from zope import component
@@ -25,8 +24,8 @@ from zope.component.testing import PlacelessSetup
 from zope.traversing.interfaces import ITraverser
 from zope.container.interfaces import INameChooser
 
-class TestImports(unittest.TestCase):
 
+class TestImports(unittest.TestCase):
 
     def test_bbb_imports(self):
         # The most of functionality was moved to zope.principalannotation.
@@ -34,12 +33,14 @@ class TestImports(unittest.TestCase):
 
         from zope.app.principalannotation import interfaces as OldI
         from zope.principalannotation import interfaces as NewI
-        self.assertIs(NewI.IPrincipalAnnotationUtility, OldI.IPrincipalAnnotationUtility)
+        self.assertIs(NewI.IPrincipalAnnotationUtility,
+                      OldI.IPrincipalAnnotationUtility)
 
         from zope.app import principalannotation as Old
         from zope.principalannotation import utility as New
 
-        self.assertIs(Old.PrincipalAnnotationUtility, New.PrincipalAnnotationUtility)
+        self.assertIs(Old.PrincipalAnnotationUtility,
+                      New.PrincipalAnnotationUtility)
         self.assertIs(Old.Annotations, New.Annotations)
 
         self.assertEqual(Old.annotations.__module__,
@@ -121,14 +122,16 @@ class TestBootstrap(PlacelessSetup, unittest.TestCase):
         self.assertTrue(event.database.conn.closed)
 
         # We only register once
-        self.assertIn('PrincipalAnnotation',
-                      event.database.conn.root()['Application'].getSiteManager())
+        self.assertIn(
+            'PrincipalAnnotation',
+            event.database.conn.root()['Application'].getSiteManager())
 
         event2 = Event()
         bootStrapSubscriber(event2)
 
-        self.assertNotIn('PrincipalAnnotation',
-                         event2.database.conn.root()['Application'].getSiteManager())
+        self.assertNotIn(
+            'PrincipalAnnotation',
+            event2.database.conn.root()['Application'].getSiteManager())
 
 
 def test_suite():
