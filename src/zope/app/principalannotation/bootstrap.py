@@ -21,6 +21,7 @@ from zope.app.appsetup.bootstrap import ensureUtility, getInformationFromEvent
 from zope.principalannotation.utility import PrincipalAnnotationUtility
 from zope.principalannotation.interfaces import IPrincipalAnnotationUtility
 
+
 def bootStrapSubscriber(event):
     """Subscriber to the IDatabaseOpenedWithRootEvent
 
