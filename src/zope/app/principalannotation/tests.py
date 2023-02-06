@@ -16,13 +16,12 @@
 """
 import unittest
 
+from zope.component.testing import PlacelessSetup
+from zope.container.interfaces import INameChooser
+from zope.traversing.interfaces import ITraverser
+
 from zope import component
 from zope import interface
-
-from zope.component.testing import PlacelessSetup
-
-from zope.traversing.interfaces import ITraverser
-from zope.container.interfaces import INameChooser
 
 
 class TestImports(unittest.TestCase):
@@ -31,13 +30,15 @@ class TestImports(unittest.TestCase):
         # The most of functionality was moved to zope.principalannotation.
         # Let's test if old imports still work:
 
-        from zope.app.principalannotation import interfaces as OldI
         from zope.principalannotation import interfaces as NewI
+
+        from zope.app.principalannotation import interfaces as OldI
         self.assertIs(NewI.IPrincipalAnnotationUtility,
                       OldI.IPrincipalAnnotationUtility)
 
-        from zope.app import principalannotation as Old
         from zope.principalannotation import utility as New
+
+        from zope.app import principalannotation as Old
 
         self.assertIs(Old.PrincipalAnnotationUtility,
                       New.PrincipalAnnotationUtility)

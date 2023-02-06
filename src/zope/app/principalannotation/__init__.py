@@ -16,7 +16,6 @@
 """
 
 # BBB: the functionality was moved to zope.principalannotation
-from zope.principalannotation.utility import (
-    PrincipalAnnotationUtility,
-    Annotations,
-    annotations)
+from zope.principalannotation.utility import Annotations
+from zope.principalannotation.utility import PrincipalAnnotationUtility
+from zope.principalannotation.utility import annotations
