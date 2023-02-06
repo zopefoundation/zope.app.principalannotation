@@ -58,7 +58,7 @@ class TestBootstrap(PlacelessSetup, unittest.TestCase):
 
         @interface.implementer(ITraverser,
                                INameChooser)
-        class SiteManager(object):
+        class SiteManager:
 
             def __init__(self):
                 self._data = {}
@@ -91,7 +91,7 @@ class TestBootstrap(PlacelessSetup, unittest.TestCase):
             def getSiteManager(self):
                 return self.sm
 
-        class Connection(object):
+        class Connection:
             closed = False
 
             def __init__(self):
@@ -103,7 +103,7 @@ class TestBootstrap(PlacelessSetup, unittest.TestCase):
             def root(self):
                 return self._root
 
-        class Database(object):
+        class Database:
 
             def __init__(self):
                 self.conn = Connection()
@@ -111,7 +111,7 @@ class TestBootstrap(PlacelessSetup, unittest.TestCase):
             def open(self):
                 return self.conn
 
-        class Event(object):
+        class Event:
 
             def __init__(self):
                 self.database = Database()
