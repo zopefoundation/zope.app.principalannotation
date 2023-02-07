@@ -15,11 +15,10 @@
 """
 
 import transaction
-
-from zope.app.appsetup.bootstrap import ensureUtility, getInformationFromEvent
-
-from zope.principalannotation.utility import PrincipalAnnotationUtility
+from zope.app.appsetup.bootstrap import ensureUtility
+from zope.app.appsetup.bootstrap import getInformationFromEvent
 from zope.principalannotation.interfaces import IPrincipalAnnotationUtility
+from zope.principalannotation.utility import PrincipalAnnotationUtility
 
 
 def bootStrapSubscriber(event):
